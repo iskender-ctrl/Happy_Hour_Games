@@ -260,7 +260,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400004, guid: 35b9df0d8ef0ab44abeb1b0a9e586310, type: 3}
   m_Animations:
@@ -279,7 +279,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e1345f231bddd7a488397fb5ca71c0cb, type: 3}
   m_Controller: {fileID: 9100000, guid: 3c90d75d090136b429461873af7f9f1f, type: 2}
   m_CullingMode: 1
