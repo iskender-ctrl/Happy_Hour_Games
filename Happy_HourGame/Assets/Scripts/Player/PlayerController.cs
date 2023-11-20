@@ -10,18 +10,20 @@ public class PlayerController : MonoBehaviour
 
     private GameObject selectedCharacter; // Seçilen karakter
 
+    public int woodCount = 0; // Oyuncunun odun sayısı
+    RaycastHit hit;
     void Start()
     {
+        clickableLayer = LayerMask.GetMask("Clickable");
         mainCamera = Camera.main;
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {

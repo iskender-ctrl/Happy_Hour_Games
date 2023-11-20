@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ExitGames.Client.Photon.StructWrapping;
 using Photon.Pun;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GamePlayManager : MonoBehaviour
@@ -31,7 +32,7 @@ public class GamePlayManager : MonoBehaviour
         }
     }
 
-    //Spawn Characters With Photon
+    //Spawn Characters With Photon and Add Tags
     void SpawnCharacter(Transform spawnPoint)
     {
         // charactersName değişkenini kullanarak karakterinizi instantiate edin
@@ -42,6 +43,27 @@ public class GamePlayManager : MonoBehaviour
         if (photonView.IsMine)
         {
             character.gameObject.tag = "Player";
+            character.AddComponent<PlayerController>();
+            SetChildrenTags(character, "Player");
+            SetChildrenAddComponent(character);
+        }
+    }
+
+    //Add Tags For Player Childs for Click and Movement
+    void SetChildrenTags(GameObject parent, string tag)
+    {
+        foreach (Transform child in parent.transform)
+        {
+            child.gameObject.tag = tag;
+            SetChildrenTags(child.gameObject, tag);
+        }
+    }
+    void SetChildrenAddComponent(GameObject parent)
+    {
+        foreach (Transform child in parent.transform)
+        {
+            child.AddComponent<CollectableWood>();
         }
     }
 }
+

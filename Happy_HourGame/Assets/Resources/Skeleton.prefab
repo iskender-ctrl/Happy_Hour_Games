@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1657159310539281270}
   - component: {fileID: 6617923976989649774}
-  - component: {fileID: 4700670955597195918}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -58,21 +57,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &4700670955597195918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657159310539281269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426f4a1b74d90d944bd422f7719de5bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickableLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1001 &1657159308980572200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1940098064602988, guid: 4bb3ae919a4b33d4cb054a3d37a92221, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1940098064602988, guid: 4bb3ae919a4b33d4cb054a3d37a92221, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4751342911864462, guid: 4bb3ae919a4b33d4cb054a3d37a92221, type: 3}
       propertyPath: m_RootOrder
@@ -300,11 +284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1895212641966680, guid: 96ee56c28689b3048bda2e42ba78567d, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1895212641966680, guid: 96ee56c28689b3048bda2e42ba78567d, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4048414121285236, guid: 96ee56c28689b3048bda2e42ba78567d, type: 3}
       propertyPath: m_RootOrder
@@ -490,11 +474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011237800896726, guid: 2b4bda023baf11846a7062827593eb49, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1011237800896726, guid: 2b4bda023baf11846a7062827593eb49, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4412064007046010, guid: 2b4bda023baf11846a7062827593eb49, type: 3}
       propertyPath: m_RootOrder
