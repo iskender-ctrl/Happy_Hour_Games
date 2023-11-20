@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                     // Tıklanan nesne bir oyuncu karakteri ise seç
                     SelectCharacter(clickedObject);
                 }
-                else
+                else if (clickedObject.gameObject.tag != "Obstacle")
                 {
                     // Tıklanan yer bir karakter değilse, seçili karaktere git
                     MoveToDestination(hit.point);
