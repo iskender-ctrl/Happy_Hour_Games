@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour
     public float moveSpeed = 5f; // Oyuncu hareket hızı
     public string targetPlayerTag = "Player"; // Hedef oyuncunun etiketi
 
+    private bool isPlayerSelected = false;
+
     void Start()
     {
         SetStartPosition();
@@ -16,6 +18,7 @@ public class CameraController : MonoBehaviour
     {
         HandleInput();
     }
+
     void SetStartPosition()
     {
         GameObject targetPlayer = GameObject.FindGameObjectWithTag(targetPlayerTag);
@@ -33,6 +36,7 @@ public class CameraController : MonoBehaviour
             Debug.LogError("Hedef oyuncu bulunamadı. Lütfen doğru etiket kullanın.");
         }
     }
+
     void HandleInput()
     {
         Vector3 moveDirection = Vector3.zero;
@@ -41,6 +45,12 @@ public class CameraController : MonoBehaviour
         // Fare ve klavye kontrolü
         moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.z = Input.GetAxis("Vertical");
+
+        // Kamera hareketi yapıldığı durumda karakterin seçimini kaldır
+        if (isPlayerSelected)
+        {
+            DeselectPlayer();
+        }
 #elif UNITY_ANDROID || UNITY_IOS
         // Mobil cihaz kontrolü
         if (Input.touchCount > 0)
@@ -51,6 +61,12 @@ public class CameraController : MonoBehaviour
             {
                 moveDirection.x = touch.deltaPosition.x;
                 moveDirection.z = touch.deltaPosition.y;
+
+                // Kamera hareketi yapıldığı durumda karakterin seçimini kaldır
+                if (isPlayerSelected)
+                {
+                    DeselectPlayer();
+                }
             }
         }
 #endif
@@ -62,5 +78,13 @@ public class CameraController : MonoBehaviour
     {
         // Oyuncuyu hareket ettir
         transform.Translate(moveDirection.normalized * moveSpeed * Time.deltaTime, Space.World);
+    }
+
+    void DeselectPlayer()
+    {
+        // Karakterin seçimini kaldır
+        isPlayerSelected = false;
+
+        // Burada gerekirse başka işlemler yapabilirsiniz
     }
 }

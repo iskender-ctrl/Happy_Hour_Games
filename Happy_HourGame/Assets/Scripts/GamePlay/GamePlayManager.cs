@@ -45,7 +45,6 @@ public class GamePlayManager : MonoBehaviour
             character.gameObject.tag = "Player";
             character.AddComponent<PlayerController>();
             SetChildrenTags(character, "Player");
-            SetChildrenAddComponent(character);
         }
     }
 
@@ -56,13 +55,6 @@ public class GamePlayManager : MonoBehaviour
         {
             child.gameObject.tag = tag;
             SetChildrenTags(child.gameObject, tag);
-        }
-    }
-    void SetChildrenAddComponent(GameObject parent)
-    {
-        foreach (Transform child in parent.transform)
-        {
-            child.AddComponent<CollectableWood>();
         }
     }
 }
